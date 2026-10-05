@@ -1,3 +1,19 @@
+> **本仓库是 [CapsWriter-Offline 上游项目](https://github.com/HaujetZhao/CapsWriter-Offline) 的个人 fork。** 下列改进由本 fork 提出；代码目前位于 [PR #467](https://github.com/HaujetZhao/CapsWriter-Offline/pull/467)，正在等待上游审查，尚未合并到本仓库默认分支。  
+> **This repository is a personal fork of the [upstream CapsWriter-Offline project](https://github.com/HaujetZhao/CapsWriter-Offline).** The improvements below are proposed by this fork. Their code is in [PR #467](https://github.com/HaujetZhao/CapsWriter-Offline/pull/467), pending upstream review, and has not yet been merged into this repository's default branch.
+
+## 本 fork 的改进 | Fork Enhancements
+
+| 功能 | Feature | 说明 | Description |
+| --- | --- | --- | --- |
+| 能量静音过滤 | Energy-based silence filtering | 识别前检测麦克风录音中的近静音片段，整段近静音时跳过 ASR，减少无声录音产生误识别。 | Detects near-silence in microphone recordings and skips ASR for near-silent clips, reducing false words from silence. |
+| 纯语气词屏蔽 | Filler-only result suppression | 当整段识别结果只有语气词时丢弃结果；包含实际内容的正常句子不受影响。 | Drops a result only when the entire transcription consists of fillers; normal sentences with content are retained. |
+| 底部录音状态悬浮窗 | Bottom recording status overlay | 在屏幕底部显示录音时长和识别状态；不抢输入焦点，停止录音后显示“正在识别…”，完成后自动隐藏，并按实际快捷键显示停止提示。 | Shows recording duration and recognition status at the bottom of the screen without stealing focus. After recording it displays “Recognizing…” and hides when processing finishes; the stop hint follows the active shortcut. |
+
+---
+
+**说明：** 上游项目原有的功能介绍和使用文档如下。  
+**Note:** The upstream project's original feature overview and documentation follow.
+
 # CapsWriter-Offline
 
 ![demo](assets/demo.png)
